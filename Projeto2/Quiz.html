@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Quiz770.css" media="screen and (min-width: 770px) and (max-width: 950px)"/>
+    <link rel="stylesheet" href="Quiz950.css" media="screen and (min-width: 950px) and (max-width: 1270px)"/>
+    <link rel="stylesheet" href="Quiz1270.css" media="screen and (min-width: 1270px)"/>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href=""><img src="Img/arrow.png" id="back"></a>
+        <a href=""><img src="Img/exit.png" id="exit"> </a>
+    </header>
+    <main>
+        <div class="esquerda">
+            <p class="pergunta">QUAL A FORMA DESTE OBJETO?</p>
+            <div class="imgguest">
+                <img src="Img/QUADRADO.png" alt="QUADRADO" id="forma_principal">
+            </div>
+        </div>
+        <div class="direita">
+            <p class="Fase">FASE 1</p>
+            <ul style="list-style: none;">
+                <li class="alternativa" id="alternativa1">
+                        <img src="Img/QUADRADO.png" alt="QUADRADO">
+                        <p>QUADRADO</p>
+                </li>
+                <li class="alternativa" id="alternativa2">
+                        <img src="Img/CÍRCULO.png" alt="CÍRCULO">
+                        <p>CÍRCULO</p>
+                </li>
+                <li class="alternativa" id="alternativa3">
+                        <img src="Img/Triângulo.png" alt="TRIÂNGULO">
+                        <p>TRIÂNGULO</p>
+                </li>
+            </ul>
+            <p class="Fase">TENTATIVAS: 0</p>
+            <p class="Fase">ERROS: 0</p>
+        </div>
+    </main>
+    <script src="QuizSort.js" type="module"></script>
+    <script src="Quiz.js" type="module"></script>
+</body>
+</html>
