@@ -54,6 +54,8 @@ main{
     margin: 10px;
     width: 80%;
     height: 80%;
+    align-content: center;
+    text-align: center;
 }
 
 .Fase{
