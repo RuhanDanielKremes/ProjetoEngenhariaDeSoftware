@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="position.css">
+    <link rel="stylesheet" href="pin.css">
+</head>
+<body>
+    <body>
+        <header>
+            <a href=""><img src="Img/retorno.webp" id="back"></a>
+            <a href=""><img src="Img/menu.webp" id="exit"> </a>
+        </header>
+        <main>
+            <div class="esquerda">
+                <div class="container_esquerda">
+                    <img src="Img/fundo casa.png" alt="QUADRADO" id="forma_principal">
+                </div>
+            </div>
+            <div class="direita">
+                <p class="Fase">FASE 2</p>
+                <div class="caixa_comando">
+                    <p class="comando_pergunta"> MONTE ESTA  FIGURA COM OS AS FORMAS GEOMÉTIRCAS</p>    
+                    <img src="Img/Sem Título-3.png" alt="" width="250px">
+                </div>
+                <!--
+                    <p class="Fase">TENTATIVAS: 
+                        <span id="contador_tentativas">0</span>
+                    </p>
+                    <p class="Fase">ERROS: 
+                        <span id="contador_erros">0</span>
+                    </p>
+                -->
+            </div>
+            <div class="baixo">
+                <div class="container">
+                    <button id="addCircleBtn">Adicionar Círculo</button>
+                    <button id="removeCircleBtn">Remover Círculo</button>
+                </div>
+            </div>
+        </main>
+        <script>
+            document.getElementById('addCircleBtn').addEventListener('click', function() {
+                const container = document.querySelector('.esquerda');
+                if (!document.querySelector('.pin')) { 
+                    const pin1 = document.createElement('div');
+                    const pin2 = document.createElement('div');
+                    pin1.classList.add('pin');
+                    pin1.classList.add('posicao1');
+                    pin2.classList.add('pin');
+                    pin2.classList.add('posicao2');
+                    container.appendChild(pin1);
+                    container.appendChild(pin2);
+                }
+            });
+
+            document.getElementById('removeCircleBtn').addEventListener('click', function() {
+                const pin1 = document.querySelector('.pin');
+                if (pin1) {
+                    pin1.remove();
+                }
+            });
+        </script>
+</body>
+</html>

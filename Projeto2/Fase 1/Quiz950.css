@@ -1,0 +1,97 @@
+#back{
+    position: absolute;
+    height: 2cm;
+    width: 2cm;
+    margin: 0%;
+    padding: 0%;
+}
+
+#exit{
+    position: absolute;
+    height: 2cm;
+    width: 2cm;
+    right: 0%;
+    margin: 0%;
+    padding: 0%;
+}
+
+main{
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between;
+    margin: 0%;
+    padding: 0%;
+}
+
+.esquerda{
+    display: inline-block;
+    width: 65%;
+    border: 1px solid black;
+    margin: 0%;
+    padding: 0%;
+}
+
+.direita{
+    display: inline-block;
+    width: 34%;
+    height: 18cm;
+    border: 1px solid black;
+    margin: 0%;
+    padding: 0%;
+}
+
+.pergunta{
+    border: 1px solid black;
+    margin: 10px 50px 0px 50px;
+    padding: 20px 2px 20px 2px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.imgguest{
+    margin: 10px;
+    width: 80%;
+    height: 80%;
+    align-content: center;
+    text-align: center;
+}
+
+.Fase{
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 50px 5px 0px 10px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit the text color */
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.alternativa img {
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    padding-left: 5px;
+    height: 40px;
+    height: 40px;
+}
+
+.alternativa p {
+    margin: 0; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+}
