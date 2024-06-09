@@ -1,0 +1,89 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    width: 60%;
+    height: 90%;
+    background-color: #005c7134;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#titulo{
+    width: 300px;
+    height: 220px;
+}
+
+.container{
+    height: 60%;
+    width: 80%;
+    border-radius: 60px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 2px;
+    box-shadow: 5px 5px white;
+}
+
+.avatar{
+    display: flex;
+    justify-content:center;
+    text-decoration: none;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar img{
+    width: 150px;
+    height: 150px;
+    margin: 40px 0px 20px 0px;  
+}
+
+#loginConvidado{
+    width: 400px;
+    height: 60px;
+    top: -5%;
+    position: relative;
+    background-color:  #b7d4db;
+    box-shadow: 3px 5px #005c7134;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Coloca o canvas atrás de todos os outros elementos */
+}
+
+.fonte{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    margin: 0px;
+    color: black;
+}
