@@ -40,8 +40,36 @@ main {
 }
 .title{
     font-weight: 900;
-    font-size: 24px;
+    font-size: 32px;
     margin: 0px;
     color: black;
     padding-bottom: 20px;
+}
+.alunos{
+    display: flex;
+    align-items: center;
+}
+.alunos table{
+    
+    margin: 1em;
+    font-size: 24pt;
+    font-weight: 900;
+    width: 400px;
+}
+tr{
+    background-color: #82D0D0;
+    text-align: center;
+}
+.tdImg{
+    background-color: #FFF;
+    align-items: center;
+}
+.tdImg img{
+    width: 80px;
+}
+#alfabeto tr{
+    background-color: #FFF;
+}
+#alfabeto td{
+    border: 1px solid #000;
 }
