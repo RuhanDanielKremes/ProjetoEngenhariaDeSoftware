@@ -4,8 +4,9 @@
     height: 10px;
     background-color: red;
     border-radius: 50%;
-    margin-top: 20px;
+    margin: 0px 0px 0px 0px;
     position: relative;
+    z-index: 3;
 }
 
 .posicao1{
@@ -14,6 +15,6 @@
 }
 
 .posicao2{
-    top: -300px;    
+    top: -400px;    
     left: 50%;
 }
