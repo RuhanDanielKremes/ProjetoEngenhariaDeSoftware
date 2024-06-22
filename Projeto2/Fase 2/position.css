@@ -110,3 +110,12 @@ main{
     font-size: 50px;
 }
 
+.opacity-0{
+    opacity: 0;
+}
+.opacity-100{
+    opacity: 100%;
+}
+.smooth-transition{
+    transition: opacity .5s ease;
+}

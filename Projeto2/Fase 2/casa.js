@@ -18,6 +18,7 @@ document.getElementById('addCircleBtn').addEventListener('click', function() {
 
 //----------------CRIAR-FORMAS--------------
 document.getElementById('createElement').addEventListener('click', function() {
+
     //FUNÇÃO CALCULAR DISTANCIA
     function getDistance(x1, y1, x2, y2) {
         return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
@@ -33,17 +34,25 @@ document.getElementById('createElement').addEventListener('click', function() {
 
     //criando formas
     const documentMain = document.querySelector('main');
+    const body = document.querySelector('body');
     const container = document.createElement('div');
     documentMain.appendChild(container);
     container.classList.add('ajustarposicao');
     const toolbox = document.querySelector('.containerBaixo');
+    const esquerda = $('.container_esquerda')[0];
     const square = document.createElement('div');
     const triangulo = document.createElement('div');
 
     //-----------------QUADRADO-----------------
-    square.classList.add('square');
+    square.classList.add('square', 'smooth-transition', 'opacity-0');
     square.classList.add('CasaQuadrado1');
-    container.appendChild(square);
+
+    
+    const refence = $('#esquerda-offset-reference')[0];
+    body.appendChild(square);
+    square.classList.remove('opacity-0');
+    square.classList.add('square-1', 'opacity-100');
+    $('.square-1').css({'top':'68.5%', 'left':'1%'});
 
     //---------teste----------------
     square.style.left = toolbox.getBoundingClientRect().left;
@@ -99,10 +108,16 @@ document.getElementById('createElement').addEventListener('click', function() {
     //-----------------TRIANGULO-----------------
     triangulo.classList.add('square');
     triangulo.classList.add('CasaTriangulo1');
-    container.appendChild(triangulo);
+    body.appendChild(triangulo);
+    triangulo.classList.remove('opacity-0');
+    triangulo.classList.add('triangle-1', 'opacity-100');
+    const squareReference = $('.square-1')[0];
+    const leftDistance = squareReference.offsetLeft + squareReference.offsetWidth + 16;
+    $('.triangle-1').css({'top':'70%', 'left': leftDistance});
     
     let isDragging_Id02 = false;
     let offsetX_Id02, offsetY_Id02;
+
     
     triangulo.addEventListener('mousedown', (e) => {
         if(isDragging_Id02){
@@ -123,7 +138,7 @@ document.getElementById('createElement').addEventListener('click', function() {
         const y_triangulo = triangulo.getBoundingClientRect().top + triangulo.getBoundingClientRect().height / 2;
         if(getDistance(x_pin1, y_pin1, x_triangulo, y_triangulo) < distanciaAlvo || getDistance(x_pin2, y_pin2, x_triangulo, y_triangulo) < distanciaAlvo){
             triangulo.style.left = (x_pin1 - (triangulo.getBoundingClientRect().width/2)) + 'px';
-            triangulo.style.top = ((-y_pin1) - (triangulo.getBoundingClientRect().height/2)) + 'px';
+            triangulo.style.top = (y_pin1 - (triangulo.getBoundingClientRect().height/2)) + 'px';
         }
     });
 });
