@@ -2,13 +2,12 @@
     cursor: move;
     position: absolute;
     opacity: 0.5;
-    z-index: '1';
+    z-index: '5';
 }
 
 .square{
     cursor: move;
     position: absolute;
-    z-index: '5';
 }
 
 .CasaQuadrado1{

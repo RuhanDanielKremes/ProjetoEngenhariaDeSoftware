@@ -3,7 +3,7 @@ const distanciaAlvo = 50;
 
 //-----------------PIN-----------------
 document.getElementById('addCircleBtn').addEventListener('click', function() {
-    const container = document.querySelector('.esquerda');
+    const containerPin = document.querySelector('.esquerda');
     if (!document.querySelector('.pin')) { 
         const pin1 = document.createElement('div');
         const pin2 = document.createElement('div');
@@ -11,8 +11,8 @@ document.getElementById('addCircleBtn').addEventListener('click', function() {
         pin1.classList.add('posicao1');
         pin2.classList.add('pin');
         pin2.classList.add('posicao2');
-        container.appendChild(pin1);
-        container.appendChild(pin2);
+        containerPin.appendChild(pin1);
+        containerPin.appendChild(pin2);
     }
 });
 
@@ -32,24 +32,50 @@ document.getElementById('createElement').addEventListener('click', function() {
     const y_pin2 = pin2.getBoundingClientRect().top + pin2.getBoundingClientRect().height / 2;
 
     //criando formas
-    const container = document.querySelector('.container');
+    const documentMain = document.querySelector('main');
+    const container = document.createElement('div');
+    documentMain.appendChild(container);
+    container.classList.add('ajustarposicao');
+    const toolbox = document.querySelector('.containerBaixo');
     const square = document.createElement('div');
     const triangulo = document.createElement('div');
 
-    //Puxando dados dos objetos criados
-    
-    
     //-----------------QUADRADO-----------------
     square.classList.add('square');
     square.classList.add('CasaQuadrado1');
     container.appendChild(square);
+
+    //---------teste----------------
+    square.style.left = toolbox.getBoundingClientRect().left;
     
+    const top1 = parseFloat(toolbox.getBoundingClientRect().top);
+    const top2 = parseFloat(square.getBoundingClientRect().top);
+    
+    square.style.top = top1;
+
+    if(top1 === top2){
+        console.log('top1 é igual a top2\ntop1: ' + top1 + '\ntop2: ' + top2);
+    }else{
+        console.log('top1 é diferente de top2\ntop1: ' + top1 + '\ntop2: ' + top2);
+    }
+
+    toolbox.style.backgroundColor = 'red';
+    
+    //---------endteste----------------
+
     let isDragging_Id01 = false;
     let offsetX_Id01, offsetY_Id01;
     
     square.addEventListener('mousedown', (e) => {
         if(isDragging_Id01){
             isDragging_Id01 = false;
+            const top1 = parseInt(toolbox.getBoundingClientRect().top);
+            const top2 = parseInt(square.getBoundingClientRect().top);
+            if(top1 === top2){
+                console.log('top1 é igual a top2\ntop1: ' + top1 + '\ntop2: ' + top2);
+            }else{
+                console.log('top1 é diferente de top2\ntop1: ' + top1 + '\ntop2: ' + top2);
+            }
         }else{
             isDragging_Id01 = true;
             offsetX_Id01 = e.clientX - square.offsetLeft;
@@ -65,8 +91,8 @@ document.getElementById('createElement').addEventListener('click', function() {
         const x_square = square.getBoundingClientRect().left + square.getBoundingClientRect().width / 2;
         const y_square = square.getBoundingClientRect().top + square.getBoundingClientRect().height / 2;
         if(getDistance(x_pin1, y_pin1, x_square, y_square) < distanciaAlvo || getDistance(x_pin2, y_pin2, x_square, y_square) < distanciaAlvo){
-            square.style.left = (x_pin1 - (distanciaAlvo/2)) + 'px';
-            square.style.top = (y_pin1 - (distanciaAlvo/2)) + 'px';
+            square.style.left = (x_pin2 - (square.getBoundingClientRect().width/2)) + 'px';
+            square.style.top = (y_pin2 - (square.getBoundingClientRect().height/2)) + 'px';
         }
     });
     
@@ -96,8 +122,8 @@ document.getElementById('createElement').addEventListener('click', function() {
         const x_triangulo = triangulo.getBoundingClientRect().left + triangulo.getBoundingClientRect().width / 2;
         const y_triangulo = triangulo.getBoundingClientRect().top + triangulo.getBoundingClientRect().height / 2;
         if(getDistance(x_pin1, y_pin1, x_triangulo, y_triangulo) < distanciaAlvo || getDistance(x_pin2, y_pin2, x_triangulo, y_triangulo) < distanciaAlvo){
-            triangulo.style.left = (x_pin2 - (distanciaAlvo/2)) + 'px';
-            triangulo.style.top = (y_pin2 - (distanciaAlvo/2)) + 'px';
+            triangulo.style.left = (x_pin1 - (triangulo.getBoundingClientRect().width/2)) + 'px';
+            triangulo.style.top = ((-y_pin1) - (triangulo.getBoundingClientRect().height/2)) + 'px';
         }
     });
 });
