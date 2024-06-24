@@ -111,11 +111,28 @@ main{
 }
 
 .opacity-0{
-    opacity: 0;
+    opacity: 0%;
+}
+.opacity-50{
+    opacity: 50%;
 }
 .opacity-100{
     opacity: 100%;
 }
 .smooth-transition{
-    transition: opacity .5s ease;
+    transition: opacity 5s ease;
+}
+
+#MesnagemGanhou{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: lightgreen;
+}
+
+.fadein{
+    transition: opacity 1s ease;
+    
 }
