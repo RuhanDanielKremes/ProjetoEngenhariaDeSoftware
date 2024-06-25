@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         localStorage.setItem('userPass', password);
 
         // Redirecionar para outra página (exemplo)
-        window.location.href = 'pagina_protegida.html'; // Atualize para a página que deseja redirecionar
+        window.location.href = '../professorGerencia/index.html'; // Atualize para a página que deseja redirecionar
     } else {
         alert("Usuário ou senha incorretos.");
     }
