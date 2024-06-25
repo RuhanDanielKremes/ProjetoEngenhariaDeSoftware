@@ -6,41 +6,38 @@
     <title>Document</title>
     <link rel="stylesheet" href="position.css">
     <link rel="stylesheet" href="pin.css">
+    <link rel="stylesheet" href="menuformas.css">
 </head>
 <body>
     <body>
         <header>
             <a href=""><img src="Img/retorno.webp" id="back"></a>
-            <a href=""><img src="Img/menu.webp" id="exit"> </a>
+            <a href="../MainPage/Index.html"><img src="Img/menu.webp" id="exit"> </a>
         </header>
         <main>
             <div class="esquerda">
-                <div class="container_esquerda">
+                <p class="comando_pergunta"> MONTE ESTA  FIGURA COM OS AS FORMAS GEOMÉTIRCAS</p>  
+                <div class="container_esquerda" id="esquerda-offset-reference">
                     <img src="Img/fundo casa.png" alt="QUADRADO" id="forma_principal">
                 </div>
             </div>
             <div class="direita">
                 <p class="Fase">FASE 2</p>
                 <div class="caixa_comando">
-                    <p class="comando_pergunta"> MONTE ESTA  FIGURA COM OS AS FORMAS GEOMÉTIRCAS</p>    
-                    <img src="Img/Sem Título-3.png" alt="" width="250px">
+                    <img src="Img/Sem Título-3.png" alt="" width="250px" id="ImgReferencia">
                 </div>
-                <!--
-                    <p class="Fase">TENTATIVAS: 
-                        <span id="contador_tentativas">0</span>
-                    </p>
-                    <p class="Fase">ERROS: 
-                        <span id="contador_erros">0</span>
-                    </p>
-                -->
-            </div>
+                <p class="Fase">ACERTOS:
+                    <span id="contador_acertos"></span>
+                </p>
+                <p class="Fase">ERROS: 
+                    <span id="contador_erros">0</span>
+                </p>
+                </div>
             <div class="baixo">
-                <div class="container">
-                    <button id="addCircleBtn">Adicionar Círculo</button>
-                    <button id="removeCircleBtn">Remover Círculo</button>
-                </div>
+                    <div class="containerBaixo" style="display: flex; gap: 1rem;"></div>
             </div>
         </main> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="casa.js"></script>
 </body>
 </html>

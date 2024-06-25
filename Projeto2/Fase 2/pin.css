@@ -4,8 +4,9 @@
     height: 10px;
     background-color: red;
     border-radius: 50%;
-    margin-top: 20px;
+    margin: 0px 0px 0px 0px;
     position: relative;
+    z-index: 3;
 }
 
 .posicao1{
@@ -14,6 +15,14 @@
 }
 
 .posicao2{
-    top: -300px;    
+    top: -360px;    
     left: 50%;
+}
+
+.casaresposta{
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    z-index: 20;
+    top: -490px;
+    opacity: 50%;
 }

@@ -1,32 +1,31 @@
 @keyframes redGlow {
-    0% {
-      box-shadow: 0 0 10px red;
-    }
-    50% {
-      box-shadow: 0 0 20px red;
-    }
-    100% {
-      box-shadow: 0 0 10px red;
-    }
+  0% {
+    box-shadow: 0 0 10px red;
   }
-  
-  @keyframes greenGlow {
-    0% {
-      box-shadow: 0 0 10px green;
-    }
-    50% {
-      box-shadow: 0 0 20px green;
-    }
-    100% {
-      box-shadow: 0 0 10px green;
-    }
+  50% {
+    box-shadow: 0 0 20px red;
   }
-  
-  .glow-red {
-    animation: redGlow 1s;
+  100% {
+    box-shadow: 0 0 10px red;
   }
+}
   
-  .glow-green {
-    animation: greenGlow 1s;
+.glow-red {
+  animation: redGlow 1s;
+} 
+
+@keyframes greenGlow {
+  0% {
+    box-shadow: 0 0 10px green;
   }
-  
+  50% {
+    box-shadow: 0 0 20px green;
+  }
+  100% {
+    box-shadow: 0 0 10px green;
+  }
+}
+
+.glow-green {
+  animation: greenGlow 1s;
+}

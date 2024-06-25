@@ -1,4 +1,4 @@
-var Acessibilidade = true;
+var Acessibilidade = false;
 var Botao = false;
 
 const header = document.querySelector('header');
@@ -44,6 +44,7 @@ menudeselecao.addEventListener("click", function(){
     } 
 });
 
+var fala = true;
 const msg = new SpeechSynthesisUtterance();
 const elemento01 = document.getElementById('TextoLogin');
 const elemento02 = document.getElementById('a_aluno');
@@ -54,58 +55,106 @@ function createListeners(){
     elemento01.addEventListener("mouseover", function(){
         if(Acessibilidade){
             msg.text = "Faça seu login!";
-            window.speechSynthesis.speak(msg);
+            if(fala){
+                window.speechSynthesis.speak(msg);
+                fala = false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
             }
-        });
+        }
+    });
             
-        elemento02.addEventListener("mouseover", function(){
-            if(Acessibilidade){
-                msg.text = "Aluno";
+    elemento02.addEventListener("mouseover", function(){
+        if(Acessibilidade){
+            msg.text = "Aluno";
+            if(fala){
                 window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
             }
-        });
-                    
-        elemento03.addEventListener("mouseover", function(){
-            if(Acessibilidade){
-                msg.text = "Professor";
+        }
+    });
+                
+    elemento03.addEventListener("mouseover", function(){
+        if(Acessibilidade){
+            msg.text = "Professor";
+            if(fala){
                 window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
             }
-        });
-                            
-        elemento04.addEventListener("mouseover", function(){
-            if(Acessibilidade){
-               msg.text = "Login como convidado";
+        }
+    });
+                        
+    elemento04.addEventListener("mouseover", function(){
+        if(Acessibilidade){
+            msg.text = "Login como convidado";
+            if(fala){
                 window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
             }
-        });
+        }
+    });
 }
                                     
 function removeListeners() {
     elemento01.removeEventListener("mouseover", function () {
         if (Acessibilidade) {
             msg.text = "Faça seu login!";
-            window.speechSynthesis.speak(msg);
+            if(fala){
+                window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
+            }
         }
     });
 
     elemento02.removeEventListener("mouseover", function () {
         if (Acessibilidade) {
             msg.text = "Aluno";
-            window.speechSynthesis.speak(msg);
+            if(fala){
+                window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
+            }
         }
     });
 
     elemento03.removeEventListener("mouseover", function () {
         if (Acessibilidade) {
             msg.text = "Professor";
-            window.speechSynthesis.speak(msg);
+            if(fala){
+                window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
+            }
         }
     });
 
     elemento04.removeEventListener("mouseover", function () {
         if (Acessibilidade) {
             msg.text = "Login como convidado";
-            window.speechSynthesis.speak(msg);
+            if(fala){
+                window.speechSynthesis.speak(msg);
+                fala=false;
+                setTimeout(() => {
+                    fala = true;
+                }, 100);
+            }
         }
     });
 }
