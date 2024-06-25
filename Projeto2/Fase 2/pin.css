@@ -15,6 +15,14 @@
 }
 
 .posicao2{
-    top: -400px;    
+    top: -360px;    
     left: 50%;
+}
+
+.casaresposta{
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    z-index: 20;
+    top: -490px;
+    opacity: 50%;
 }
