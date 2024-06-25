@@ -66,11 +66,16 @@ main{
 }
 
 .comando_pergunta{
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0% 0px 0px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
-    font-size: 50px;
+    font-size: 40px;
+    position: absolute;
+    left: 70px;
+    width: 60%;
+    z-index: 0;
+    padding: 0px 0px 0px 0px;
 }
 
 .container_esquerda{
@@ -111,11 +116,27 @@ main{
 }
 
 .opacity-0{
-    opacity: 0;
+    opacity: 0%;
+}
+.opacity-50{
+    opacity: 50%;
 }
 .opacity-100{
     opacity: 100%;
 }
 .smooth-transition{
-    transition: opacity .5s ease;
+    transition: opacity 5s ease;
+}
+
+#MesnagemGanhou{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: lightgreen;
+}
+
+.fadein{
+    transition: opacity 1s ease; 
 }
