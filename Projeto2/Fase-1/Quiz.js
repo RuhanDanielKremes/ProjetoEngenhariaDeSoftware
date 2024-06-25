@@ -6,6 +6,7 @@ let altertenativa2_listener;
 let altertenativa3_listener;
 const tentativas = document.getElementById("contador_tentativas");
 const erros = document.getElementById("contador_erros");
+const acertos = document.getElementById("acertos");
 import { nova_forma } from './QuizSort.js';
 
 function seton_listeners_para_alternativas() {
@@ -30,9 +31,25 @@ seton_listeners_para_alternativas();
 function verificar_resposta(x) {                                            //Esta função é chamada quando o usuário 
     return function() {                                                     //clica em uma alternativa.
         setoff_listeners_para_alternativas();                           
-        tentativas.innerText = parseInt(tentativas.innerText) + 1;          //A função verifica se a alternativa
+        tentativas.innerText = parseInt(tentativas.innerText) + 1;
+        
+        if(parseInt(tentativas.innerText) == 5){
+            let _acertos = parseInt(acertos.innerText);
+            let _erros = parseInt(erros.innerText);
+
+            let pt_fase_1 = (_acertos * 150) - (_erros * 50);
+            let alunos = JSON.parse(localStorage.getItem('alunos'));
+            let index = alunos.findIndex(alun => alun.codigo = localStorage.getItem('aluno_logado'));
+            alunos[index].pontuacao_fase1 = pt_fase_1;
+            alunos = JSON.stringify(alunos)
+            localStorage.setItem('alunos', alunos)
+
+            window.location.href = 'aluno-passou.html';
+        }   
+               //A função verifica se a alternativa
         if (x.children[1].innerText === forma) {                            //clicada é a correta.
             //alert("Acertou!");                                            
+            acertos.innerText = parseInt(acertos.innerText) + 1;                //É setado a classe de brilho vermelho e shake         .
             document.body.classList.add("glow-green");                      //Antes disso trava as opções de resposta
             setTimeout(() => {                                              //Para não haver nenhum erro.
                 altertenativa1.style.visibility = 'visible';                //Depois de 1 segundo, a tela é resetada
