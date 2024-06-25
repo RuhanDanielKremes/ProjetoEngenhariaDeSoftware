@@ -213,6 +213,7 @@ function criarCampo() {
     ImgFundo2.style.width = '500px';
     ImgFundo2.style.height = '300px';
     document.getElementById('esquerda-offset-reference').appendChild(ImgFundo2);
+    ImgFundo2.style.top='50%';
 
     //-----------------PIN-----------------
     const containerPin = document.querySelector('.esquerda');
